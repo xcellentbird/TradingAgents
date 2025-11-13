@@ -23,7 +23,7 @@ def get_stock_news_openai(query, start_date, end_date):
         reasoning={},
         tools=[
             {
-                "type": "web_search_preview",
+                "type": "web_search",
                 "user_location": {"type": "approximate"},
                 "search_context_size": "low",
             }
@@ -58,7 +58,7 @@ def get_global_news_openai(curr_date, look_back_days=7, limit=5):
         reasoning={},
         tools=[
             {
-                "type": "web_search_preview",
+                "type": "web_search",
                 "user_location": {"type": "approximate"},
                 "search_context_size": "low",
             }
@@ -93,7 +93,7 @@ def get_fundamentals_openai(ticker, curr_date):
         reasoning={},
         tools=[
             {
-                "type": "web_search_preview",
+                "type": "web_search",
                 "user_location": {"type": "approximate"},
                 "search_context_size": "low",
             }
