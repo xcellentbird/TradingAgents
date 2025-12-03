@@ -24,17 +24,17 @@ def get_stock_news_openai(query, start_date, end_date):
         tools=[
             {
                 "type": "web_search",
-                "user_location": {"type": "approximate"},
-                "search_context_size": "low",
+                "user_location": {"type": "approximate", "country": "US"},
+                "search_context_size": "high",
             }
         ],
         temperature=1,
-        max_output_tokens=4096,
+        # max_output_tokens=4096,
         top_p=1,
         store=True,
     )
 
-    return response.output[1].content[0].text
+    return response.output[-1].content[0].text
 
 
 def get_global_news_openai(curr_date, look_back_days=7, limit=5):
@@ -59,17 +59,17 @@ def get_global_news_openai(curr_date, look_back_days=7, limit=5):
         tools=[
             {
                 "type": "web_search",
-                "user_location": {"type": "approximate"},
-                "search_context_size": "low",
+                "user_location": {"type": "approximate", "country": "US"},
+                "search_context_size": "high",
             }
         ],
         temperature=1,
-        max_output_tokens=4096,
+        # max_output_tokens=4096,
         top_p=1,
         store=True,
     )
 
-    return response.output[1].content[0].text
+    return response.output[-1].content[0].text
 
 
 def get_fundamentals_openai(ticker, curr_date):
@@ -94,8 +94,8 @@ def get_fundamentals_openai(ticker, curr_date):
         tools=[
             {
                 "type": "web_search",
-                "user_location": {"type": "approximate"},
-                "search_context_size": "low",
+                "user_location": {"type": "approximate", "country": "US"},
+                "search_context_size": "high",
             }
         ],
         temperature=1,
@@ -104,4 +104,4 @@ def get_fundamentals_openai(ticker, curr_date):
         store=True,
     )
 
-    return response.output[1].content[0].text
+    return response.output[-1].content[0].text

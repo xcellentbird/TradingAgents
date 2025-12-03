@@ -85,7 +85,7 @@ class TradingAgentsGraph:
             self.quick_thinking_llm = ChatOpenAI(
                 model=self.config["quick_think_llm"],
                 base_url=self.config["backend_url"],
-                reasoning_effort="minimal",
+                reasoning_effort="low",
             )
         elif self.config["llm_provider"].lower() == "anthropic":
             self.deep_thinking_llm = ChatAnthropic(

@@ -10,12 +10,12 @@ DEFAULT_CONFIG = {
     ),
     # LLM settings
     "llm_provider": "openai",
-    "deep_think_llm": "o4-mini",
-    "quick_think_llm": "gpt-4o-mini",
+    "deep_think_llm": "gpt-5",
+    "quick_think_llm": "gpt-5",
     "backend_url": "https://api.openai.com/v1",
     # Debate and discussion settings
-    "max_debate_rounds": 1,
-    "max_risk_discuss_rounds": 1,
+    "max_debate_rounds": 5,
+    "max_risk_discuss_rounds": 5,
     "max_recur_limit": 100,
     # Data vendor configuration
     # Category-level configuration (default for all tools in category)
